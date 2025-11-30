@@ -1,6 +1,8 @@
 //import React, { useState } from "react";
 import LoginPage from "../components/pages/login/LoginPage.jsx";
-import Loga from "../components/pages/Loga.jsx";
+import { Route, Routes } from "react-router-dom";
+import OrderPage from "../components/pages/order/OrderPage.jsx";
+import ErrorPage from "../components/pages/error/ErrorPage.jsx";
 function App() {
   // States(état, données)
 
@@ -8,10 +10,11 @@ function App() {
 
   // affichage (render)
   return (
-    <div>
-      <Loga />
-      <LoginPage/>
-    </div>
+    <Routes>
+      <Route path="/" element={<LoginPage/>}/>
+      <Route path="/order/:username" element={<OrderPage/>}/>
+      <Route path="*" element={<ErrorPage/>}/>
+    </Routes>
   );
 }
 export default App;
