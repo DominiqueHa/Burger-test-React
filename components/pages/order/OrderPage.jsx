@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
 export default function OrderPage() {
   return (
-    <div>OrderPage</div>
+    <div>OrderPage
+        <Link to="/">
+         <button>Déconnection</button>
+    </Link>
+    </div>
+    
   )
 }
